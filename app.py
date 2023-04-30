@@ -1,3 +1,4 @@
+import os
 import gradio as gr
 import numpy as np
 import torch
@@ -16,18 +17,16 @@ from gradio_app.real_image_editing_app import create_demo_editing
 from gradio_app.app_utils import global_context
 
 
-TITLE = "# [MasaCtrl](https://ljzycmd.github.io/projects/MasaCtrl/)"
-DESCRIPTION = "<b>Gradio demo for MasaCtrl</b>: [[GitHub]](https://github.com/TencentARC/MasaCtrl), \
-                [[Paper]](https://arxiv.org/abs/2304.08465). \
-                If MasaCtrl is helpful, please help to ⭐ the [Github Repo](https://github.com/TencentARC/MasaCtrl) 😊 </p>"
-
-DESCRIPTION += '<p>For faster inference without waiting in queue, \
-                you may duplicate the space and upgrade to GPU in settings. </p>'
-
+SPACE_ID = os.getenv('SPACE_ID')
+TITLE = '# [MasaCtrl](https://ljzycmd.github.io/projects/MasaCtrl/)</h1>'
+DESCRIPTION = '<div align="center">'
+DESCRIPTION += f'<p>Gradio demo for MasaCtrl: <a href="https://github.com/TencentARC/MasaCtrl">[Github]</a>, <a href="https://arxiv.org/abs/2304.08465">[Paper]</a>. If MasaCtrl is helpful, please help to ⭐ the <a href="https://github.com/TencentARC/MasaCtrl">Github Repo</a> 😊</p>'
+DESCRIPTION += f'<p>For faster inference without waiting in queue, you may duplicate the space and upgrade to GPU in settings. <a href="https://huggingface.co/spaces/{SPACE_ID}?duplicate=true"><img style="display: inline; margin-top: 0em; margin-bottom: 0em" src="https://bit.ly/3gLdBN6" alt="Duplicate Space" /></a></p>'
+DESCRIPTION += '</div>'
 
 with gr.Blocks(css="style.css") as demo:
     gr.Markdown(TITLE)
-    gr.Markdown(DESCRIPTION)
+    gr.HTML(DESCRIPTION)
     model_path_gr = gr.Dropdown(
         ["andite/anything-v4.0",
          "CompVis/stable-diffusion-v1-4",
