@@ -16,10 +16,6 @@ from gradio_app.real_image_editing_app import create_demo_editing
 
 from gradio_app.app_utils import global_context
 
-import  urllib3
-urllib3.disable_warnings()
-session.verify = False
-
 SPACE_ID = os.getenv('SPACE_ID')
 TITLE = '# [MasaCtrl](https://ljzycmd.github.io/projects/MasaCtrl/)</h1>'
 DESCRIPTION = '<div align="center">'
