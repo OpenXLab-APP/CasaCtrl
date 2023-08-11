@@ -20,7 +20,7 @@ SPACE_ID = os.getenv('SPACE_ID')
 TITLE = '# [MasaCtrl](https://ljzycmd.github.io/projects/MasaCtrl/)</h1>'
 DESCRIPTION = '<div align="center">'
 DESCRIPTION += f'<p>Gradio demo for MasaCtrl: <a href="https://github.com/TencentARC/MasaCtrl">[Github]</a>, <a href="https://arxiv.org/abs/2304.08465">[Paper]</a>. If MasaCtrl is helpful, please help to ⭐ the <a href="https://github.com/TencentARC/MasaCtrl">Github Repo</a> 😊</p>'
-DESCRIPTION += f'<p>For faster inference without waiting in queue, you may duplicate the space and upgrade to GPU in settings. <a href="https://huggingface.co/spaces/{SPACE_ID}?duplicate=true"><img style="display: inline; margin-top: 0em; margin-bottom: 0em" src="https://bit.ly/3gLdBN6" alt="Duplicate Space" /></a></p>'
+DESCRIPTION += f'<p>For faster inference without waiting in queue, you may duplicate the space and upgrade to GPU in settings. </p>'
 DESCRIPTION += '</div>'
 
 with gr.Blocks(css="style.css") as demo:
